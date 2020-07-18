@@ -1,0 +1,70 @@
+{% load static %}
+{% load embed_video_tags %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Video Library</title>
+
+   
+    <!-- <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/album/"> -->
+    <!-- Bootstrap core CSS -->
+
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <!-- Custom styles for this template -->
+    <link src="{% static 'css/album.css' %}" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+  
+  <div class="navbar navbar-dark bg-dark shadow-sm">
+    <div class="container d-flex justify-content-between">
+      <a href="#" class="navbar-brand d-flex align-items-center">
+        <center><strong>Sharath Learn Library</strong></center>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main role="main">
+<center>
+  <div class="album py-5 bg-light">
+    <div class="container">
+      {% block contents %}
+      <h2>{{video}}</h2>
+      <video name='demo' controls autoplay width='80%' height='80%'>
+      <source src='media/{{ video }}'' type="video/mp4"></source>
+      </video>
+      {% endblock %}
+          </div>
+        </div>
+      </center>
+</main>
+
+<footer class="text-muted">
+  <div class="container">
+  
+      <center><p>@ Sharath Kumar</p></center>
+   
+   </div>
+   <script src="{% static 'bootstrap/js/jquery.min.js' %}"></script>
+   <script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+</footer>
+</html>
